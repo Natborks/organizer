@@ -1,0 +1,82 @@
+<div class="form-style-10">
+<h1>Sign Up Now!<span>Sign up and join the SRC organizing team!</span></h1>
+
+    <%=form_for(@user) do |f| %>
+
+        <% if @user.errors.any? %>
+            <div id="error explanation">
+                <div class="alert alert-error">
+                The form contains <%= pluralize(@user.errors.count, "error") %>.
+                </div>
+                    <ul>
+                        <% @user.errors.full_messages.each do |msg| %>
+                            <li> <%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+        <% end %>
+        <div class="section"><span>1</span>Personal Details</div>
+
+        <div class="inner-wrap">
+           <%= f.label :first_name %>
+           <%= f.text_field :first_name %>
+            <br>
+
+           <%= f.label :last_name %>
+           <%= f.text_field :last_name %>
+            <br>
+
+           <%= f.label :gender %>
+            <%= f.select :gender, options_for_select(["male","female"]), { prompt: "Select Gender" }, 
+            class: "form-control" %>
+             <br>
+
+            <%= f.label :Student_ID %>
+            <%= f.text_field :student_id_number%>
+            <br>
+
+            <%= f.label :email %>
+            <%= f.text_field :email%>
+             <br>
+
+            <%= f.label :phone %>
+            <%= f.text_field :phone%>
+             <br>
+
+            <%= f.label :level %>
+            <%= f.select :level, options_for_select(["100 1st","100 2nd","200 1st",
+                "200 2nd","300 1st","300 2nd","400 1st","400 2nd"]), 
+            { prompt: "Select level" },  class: "form-control" %>
+        </div>
+
+        <div class="section"><span>2</span>About You</div>
+        <div class="inner-wrap">
+         <%= f.label :Tell_us_a_bit_about_yourself%>
+         <%= f.text_area :about_you%>
+        <br>
+           
+        </div>
+
+        <div class="section"><span>3</span>SRC</div>
+        <div class="inner-wrap">
+            <%= f.label :why_would_you_like_to_join_the_SRC_organizing_team%>
+            <%= f.text_area :reason%>
+            <br>
+
+             <%= f.label :Do_you_have_any_areas_of_speciality_when_it_comes_to_organizing%>
+             <%= f.text_area :area_interest%>
+             <br>
+        </div>
+
+        <div class="button-section">
+          <%= f.submit "Submit" %>
+         <span class="privacy-policy">
+         <%=f.check_box :terms%>
+              You agree to our
+            <%= link_to 'Terms and Conditions'%>
+            </p> 
+         </span>
+        </div>
+    <%end%>
+</div>
+

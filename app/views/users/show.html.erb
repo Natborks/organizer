@@ -1,0 +1,53 @@
+<style>
+  body {
+    background: #FFF
+  }
+</style>
+
+<table class="table table-hover">
+  <thead class="thead-light">
+
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row">First Name</th>
+        <td><%=@user.first_name%></td>
+      </tr>
+
+      <tr>
+        <th scope="row">ID Number</th>
+        <td><%=@user.student_id_number%></td>
+      </tr>
+
+       <tr>
+        <th scope="row">Email</th>
+        <td><%=@user.email%></td>
+      </tr>
+
+       <tr>
+        <th scope="row">level</th>
+        <td><%=@user.level%></td>
+      </tr>
+
+       <tr>
+        <th scope="row">gender</th>
+        <td><%=@user.gender%></td>
+      </tr>
+
+       <tr>
+        <th scope="row">About Student</th>
+        <td><%=@user.about_you%></td>
+      </tr>
+
+      <tr>
+        <th scope="row">Area of Interest</th>
+        <td><%=@user.area_interest%></td>
+      </tr>
+
+       <tr>
+        <th scope="row">Reason for joining organizing team</th>
+        <td><%=@user.reason%></td>
+      </tr>
+
+  </tbody>
+</table>
